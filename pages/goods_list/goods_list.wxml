@@ -1,0 +1,29 @@
+<!--pages/goods_list/goods_list.wxml-->
+<searchInput></searchInput>
+<!--   n绑定名字 就是  bind + 在components 里面自己随意定于的名字 -->
+<view >
+<tabs tabs_title="{{tabs_title}}"  bindtabsItemChange="tabsItemChange"></tabs>
+<view  wx:if="{{tabs_title[0].isActice}}">
+
+<view >
+
+
+    <navigator  class="listitem" wx:for="{{listItem}}" wx:key="goods_id"
+    url="../goods_detail/goods_detail?goods_id={{item.goods_id}}">
+    <view class="imageContant" >
+    <image src="{{item.goods_small_logo?item.goods_small_logo:'https://i2.hdslb.com/bfs/archive/67c02811e2261fde93ba371081f30144c5599e0d.jpg@1200w_400h.webp'}}" mode="widthFix" />
+    </view>
+
+    <view class="textContant">
+    <view class="textdetial">{{item.goods_name}}</view>
+    <view class="textprice">￥{{item.goods_price}}</view>
+    </view>
+    
+    </navigator>
+
+</view>
+
+</view>
+<view  wx:elif="{{tabs_title[1].isActice}}">22222222222</view>
+<view  wx:elif="{{tabs_title[2].isActice}}">33333</view>
+</view>

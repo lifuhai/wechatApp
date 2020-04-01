@@ -1,0 +1,59 @@
+<!--pages/pay/pay.wxml-->
+
+<view class="addressDetail" >
+
+    <view class="namegroup" >
+        <view class="name">{{address.userName}}</view>
+        <view class="address">{{addressDetail}}</view>
+    </view>
+
+    <view class="phone">{{address.telNumber}}</view>
+</view>
+
+<view class="payType">
+
+    <view >
+        支付方式
+    </view>
+    
+</view>
+<view class="pay_shop">
+
+    <view class="shop_name" >
+        平台自营
+    </view>
+    
+    <view class="imageItem" wx:for="{{carList}}" wx:key="goods_id">
+
+        <view class="image_view">
+                <image  src="{{item.goods_small_logo}}" />
+        </view>
+
+        <view class="titleContant">
+                <view class="title">{{item.goods_name}}</view>
+                <view class="type">规格:默认</view>
+
+                <view class="number_andPrice">
+                    <view class="number">x{{item.num}}</view>
+                    <view class="price">￥{{item.goods_price}}</view>
+                </view>
+        </view>
+    </view>
+</view>
+
+<view class="pay">
+
+
+    <view class="gogogogog">
+          <view class="allPrice">
+        
+        合计   <text >   ￥{{all_Price}}</text>
+    </view>
+    <view >包含运费</view>
+    </view>
+      
+  
+
+    <view class="gopay" bind:tap="pay_text">支付({{sum}})</view>
+</view>
+

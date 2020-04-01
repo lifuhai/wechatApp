@@ -1,0 +1,57 @@
+<!--pages/my/my.wxml-->
+<view class="mylayout">
+
+    <view class="user_image_wrap">
+        <image class="user_bg" src="{{avatarUrl}}"></image>
+       <view class="avater_and_name"  >
+                <image src="{{avatarUrl}}" mode="widthFix" />
+             
+             <button bindgetuserinfo="get_avater_and_name" open-type="getUserInfo">{{name}}</button>
+         </view>
+    </view>
+
+</view>
+
+<!-- 我的订单 -->
+
+<view class="myorder">
+
+  我的订单
+    
+</view>
+
+<!-- 订单状态 -->
+
+<view class="orderInfo">
+    
+    <navigator class="orderNo" url="../order_list/order_list?id=0">
+            <image  mode="widthFix"  src="https://tpi.hujifang.com/web/uploads/image/store_1/02849adfcf58db4462215200abb2ef9ef810b7fd.png" />
+            <text >待付款</text>
+    </navigator>
+   
+    <navigator class="orderNo" url="../order_list/order_list?id=1">
+            <image  mode="widthFix"  src="https://tpi.hujifang.com/web/uploads/image/store_1/8fbfa96eaaa6a8b87405b05daf4c522a40878ce9.png" />
+            <text >待发货</text>
+    </navigator>
+       <navigator class="orderNo" url="../order_list/order_list?id=2">
+            <image  mode="widthFix"  src="https://tpi.hujifang.com/web/uploads/image/store_1/6eac12746f0be19d104a679c21b8c44adcc8383e.png" />
+            <text >待收货</text>
+    </navigator>
+    <navigator class="orderNo" url="../order_list/order_list?id=3">
+            <image  mode="widthFix"  src="https://tpi.hujifang.com/web/uploads/image/store_1/f698fbe1848e317d31fb49728092a263892a84cc.png" />
+            <text >已完成</text>
+    </navigator>
+</view>
+
+<!-- 订单其他列表 -->
+
+<view class="indexMeau">
+        <view class="meau" wx:for="{{meau}}" wx:key="id" >
+             <navigator  >
+           <image  mode="widthFix"  src="{{item.icon}}" />
+            <text >{{item.name}}</text>
+    </navigator>
+        </view>
+          
+
+</view>

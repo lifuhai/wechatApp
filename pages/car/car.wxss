@@ -1,0 +1,157 @@
+/* pages/car/car.wxss */
+page {
+  padding-bottom: 90rpx;
+}
+button {
+  border: 1px solid var(--themColor);
+  margin-top: 20rpx;
+}
+.addressGroup {
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  border-bottom: 2rpx solid var(--themColor);
+}
+.addressGroup .uesrinfo {
+  flex: 3;
+  background-color: white;
+}
+.addressGroup .uesrinfo .addresdetai {
+  margin-top: 15rpx;
+  text-align: left;
+}
+.addressGroup .phone {
+  flex: 1.5;
+  background-color: white;
+  text-align: right;
+}
+.carContant .car_title {
+  font-size: 35rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 15rpx;
+  border-bottom: 1rpx solid var(--themColor);
+}
+.carContant .item_title {
+  display: flex;
+  background-color: white;
+  padding: 15rpx;
+  border-bottom: 1rpx solid #f3f3f3;
+}
+.carContant .item_title .cbox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carContant .item_title .image {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carContant .item_title .image image {
+  width: 90%;
+}
+.carContant .item_title .titleContant {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+  justify-content: space-around;
+}
+.carContant .item_title .titleContant .title {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  color: #999999;
+  font-size: 25rpx;
+}
+.carContant .item_title .titleContant .price_add_number {
+  margin-top: 25rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.carContant .item_title .titleContant .price {
+  color: var(--themColor);
+  font-weight: 600;
+  font-size: 30rpx;
+}
+.carContant .item_title .titleContant .numbe_add {
+  display: flex;
+}
+.carContant .item_title .titleContant .numbe_add .del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rpx;
+  height: 50rpx;
+  border: 1rpx solid #cccccc;
+}
+.carContant .item_title .titleContant .numbe_add .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rpx;
+  height: 50rpx;
+}
+.carContant .item_title .titleContant .numbe_add .add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50rpx;
+  height: 50rpx;
+  border: 1rpx solid #cccccc;
+}
+.empty {
+  display: flexbox;
+  text-align: center;
+  flex-direction: column;
+  margin-top: 150rpx;
+  color: var(--themColor);
+}
+.empty image {
+  width: 350rpx;
+  height: 350rpx;
+}
+.empty text {
+  margin-top: 55rpx;
+}
+.carbottom {
+  height: 80rpx;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  border-top: 1rpx solid #f3f3ff;
+}
+.carbottom .cball {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carbottom .sumPrice {
+  flex: 4;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.carbottom .sumPrice .allprice .price_text {
+  color: var(--themColor);
+  font-size: 35rpx;
+  font-weight: 800;
+}
+.carbottom .tv_jiesuan {
+  background-color: var(--themColor);
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carbottom .tv_jiesuan .jiesuan {
+  color: white;
+  font-size: 35rpx;
+}

@@ -1,0 +1,39 @@
+<!--pages/category/category.wxml-->
+
+<view class="cates">
+<searchInput></searchInput>
+<view  class="cate_">
+
+<!-- <scroll-view class = "left_" wx:for="{{left_Lis}}" wx:key="cat_id">{{item.cat_name}}</scroll-view> -->
+<scroll-view class = "left_"  scroll-y="{{true}}">
+
+    <view  class="left_title  {{index===currentIndex ?'isSelect':''}}" 
+    wx:for="{{left_List}}" wx:key="*this" 
+    bind:tap="bingd_scrll" data-index="{{index}}">
+    
+        {{item.cat_name}}
+    </view>
+      
+
+</scroll-view>
+<!--  右侧商品内容 -->
+<scroll-view class = "right_"  scroll-y="{{true}}" scroll-top="{{ scroll_top}}">
+     <view  class="righr_connet" wx:for="{{right_List}}" wx:key="cat_id">
+
+         <view class="item_title " >  {{item.cat_name}} </view>
+      
+        <view class="goods_list">
+            <navigator   wx:for="{{item.children}}"
+                url="../goods_list/goods_list?cid={{item.cat_id}}"
+             wx:key="cat_id">
+
+                <image  src="{{item.cat_icon}}" mode="widthFix" />
+                <view class="goods_name">{{item.cat_name}}</view>
+           </navigator> 
+          
+        </view>
+    </view>
+  
+</scroll-view>
+</view>
+</view>

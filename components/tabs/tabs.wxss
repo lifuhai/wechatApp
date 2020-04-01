@@ -1,0 +1,17 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  height: 90rpx;
+}
+.tabs .tabs_title {
+  flex: 1;
+  display: flex;
+  font-size: 35rpx;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.tabs .isActicve {
+  color: var(--themColor);
+  border-bottom: 2rpx solid var(--themColor);
+}

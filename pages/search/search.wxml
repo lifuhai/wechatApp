@@ -1,0 +1,37 @@
+<!--pages/search/search.wxml-->
+
+<view class="contant">
+
+
+<view  class="search">
+
+
+<view class="inputContant" >
+
+    <input  placeholder="请输入您要搜索的商品" bindinput="inputOnClick" />
+
+    <view class="cancle">取消</view>
+</view>
+
+</view>
+
+<scroll-view  class="scroll" scroll-y="{{true}}"     >
+
+
+
+    <view  wx:for="{{list}}" wx:key="goods_id">
+        
+        <navigator  url="../goods_detail/goods_detail?goods_id={{item.goods_id}}">
+                
+               
+
+                <view  class="textView" >
+                     {{item.goods_name}}
+                </view>
+        </navigator>
+        </view>
+    
+
+
+ </scroll-view>
+</view>
