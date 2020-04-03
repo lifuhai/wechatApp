@@ -16,7 +16,7 @@ image {
   flex: 1;
 }
 .index_list {
-  padding: 10rpx;
+  padding: 1rpx 10rpx;
 }
 .index_list navigator {
   overflow: hidden;

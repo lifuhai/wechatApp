@@ -3,6 +3,12 @@
 page{
     padding-bottom: 90rpx;
 }
+
+.scrllView{
+    width: 100%;  
+    height: 100vh;  
+
+}
 .swiper_view{
     swiper{
         height:  70vw;
@@ -60,13 +66,23 @@ page{
     font-size: 35rpx;
     font-weight: 800;
     padding-top: 15rpx;
-    padding-bottom: 15rpx;
 
-    border-bottom: 5rpx ;
+    display: flex;
+    flex-direction: column;
     text{
-        margin-left: 25rpx;
+        padding-left: 25rpx;
+        padding-bottom: 20rpx;
     }
+    .topnav{
+        position: fixed;
+        top: 0rpx;
+        z-index:99;
+        background: #fff;
+        width: 100%;
+    }
+  
 }
+
 .botomgroup{
     border-top: 1rpx solid#f3f3f3;
     display: flex;
@@ -139,4 +155,110 @@ page{
         width: 35rpx;
         height: 35rpx;
     }
+}
+.view_diaog{
+    position: fixed;
+    width: 100%;
+     height:100%;  
+    bottom: 90rpx;
+    background-color:rgba(0,0,0,0.5);
+      
+
+
+            .contant{
+                width: 100%;   
+                bottom: 90rpx;  
+                background-color: white;   
+                position: fixed;   
+            
+
+                .iVcontant{     
+                    display: flex;
+                    width: 100%;
+                    background-color: white;
+                    justify-content: space-between;
+                
+                    image{
+                        width: 150rpx;
+                        height: 150rpx;
+                        margin-left: 25rpx;
+                        margin-top: -25rpx;
+                        border-radius: 10rpx;
+                    }
+
+                    .close{
+
+                            width: 50rpx;
+                            height: 50rpx;
+                            margin-top: 20rpx;
+                            margin-right: 30rpx;
+                    }
+                
+            }
+
+            .tv_lei{
+                border-top: 1rpx solid#f3f3f3;
+                margin-top: 20rpx;
+                padding: 20rpx;
+                display: flex;
+                width: 100%;
+                background-color: white;
+                font-size: 35rpx;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                .numebr_contant{
+                    margin-right: 25rpx;
+                    display: flex;
+                    font-size: 25rpx;
+                    background-color: white;
+                    flex-direction: row;
+                    
+                    .del{
+                        padding: 10rpx 18rpx;
+                        background-color: #f3f3f3;
+                        margin-right: 5rpx;
+                    }
+                    .number{
+                        padding: 10rpx 20rpx;
+                        background-color: #f3f3f3;
+                        margin-right: 5rpx;
+                    }
+                    .add{
+                        padding: 10rpx 18rpx;
+                        background-color: #f3f3f3;
+                    }
+                }
+                
+            }
+
+            .catery{
+
+                display: flex;
+                flex-wrap:wrap ;
+            .tv_cate{
+             
+                padding: 12rpx 25rpx;
+                border: 2rpx solid #f3f3f3;
+                font-size: 25rpx;
+                border-radius: 5rpx;
+                margin: 15rpx 35rpx;
+                background-color: white;
+           
+
+            }
+            .isActive{
+
+                border: 2rpx solid red;
+                background-color: #f3f3f3;
+                
+            }
+        }
+
+
+    }
+
+  
+
+    
 }

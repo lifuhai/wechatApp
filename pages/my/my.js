@@ -13,6 +13,7 @@ Page({
     index:{},
     meau:[],
     widwidth:0,
+    modalHidden:false,
   },
   async get_avater_and_name(e){
 
@@ -57,7 +58,9 @@ Page({
 
       console.log("=============")
       console.log(result)
-      const access_token = result.data.data.access_token;
+      // const access_token = result.data.data.access_token;
+      const access_token = "8m5trLpgSsaYOX7175A64l8qzlDhGVwA";
+      
       wx.setStorageSync("access_token", access_token);
 
     this.getUserIcon();
@@ -120,38 +123,20 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  viewOnCLick(e){
+    console.log(e)
+    let type = e.currentTarget.dataset.sign;
+   
+    this.setData({
+      modalHidden:true
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  close_dialog(){
+    this.setData({
+      modalHidden:false
+    })
   }
+
+  
+
 })

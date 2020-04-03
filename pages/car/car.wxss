@@ -39,10 +39,15 @@ button {
   border-bottom: 1rpx solid #f3f3f3;
 }
 .carContant .item_title .cbox {
-  flex: 1;
+  width: 60rpx;
   display: flex;
+  background-color: white;
   justify-content: center;
   align-items: center;
+  margin-left: 15rpx;
+}
+.carContant .item_title .cbox checkbox-group checkbox {
+  transform: scale(0.8, 0.8);
 }
 .carContant .item_title .image {
   flex: 2;
@@ -51,7 +56,7 @@ button {
   align-items: center;
 }
 .carContant .item_title .image image {
-  width: 90%;
+  width: 80%;
 }
 .carContant .item_title .titleContant {
   display: flex;
@@ -133,6 +138,9 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.carbottom .cball checkbox {
+  transform: scale(0.8, 0.8);
 }
 .carbottom .sumPrice {
   flex: 4;

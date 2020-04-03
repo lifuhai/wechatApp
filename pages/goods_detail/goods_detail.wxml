@@ -1,60 +1,84 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<view class="swiper_view">
+<!-- pages/goods_detail/goods_detail.wxml -->
 
+<scroll-view  class="scrllView" scroll-y="{{true}}" 
+
+bindscroll="scrollOnClick" 
+
+>
+
+<view class="index_scrll">
+<view class="swiper_view" >
   <swiper autoplay="{{true}}" indicator-dots="{{true}}" circular="{{true}}">
     <swiper-item wx:for="{{data_detail.pics}}" wx:key="pics_id" bind:tap="bindsSwiperItem" data-url="{{item.pics_mid}}">
       <image src="{{item.pics_mid}}" mode="widthFix" />
     </swiper-item>
   </swiper>
-
 </view>
 <!-- 商品标题 -->
-
 <view class="goods_title">
-
   <view class="titlegroup">
-    <view class="price"> ￥{{data_detail.goods_price}}</view>
+    <view class="price">￥{{data_detail.goods_price}}</view>
     <view class="title">{{data_detail.goods_name}}</view>
   </view>
-
   <view class="sc_group">
     <image src="/icon/homesel.png" />
     <view class="shoucang_title">收藏</view>
   </view>
 </view>
-
 <!-- 商品详情 -->
-
-<view class="detaititle">
-  <text>图文详情</text>
+<view class="detaititle ">
+  <text  id="twl" class=" {{Top>=Stopheight?'topnav':''}}">图文详情</text>
   <view>
     <rich-text nodes="{{data_detail.goods_introduce}}"></rich-text>
   </view>
+   
 </view>
+</view>
+</scroll-view>
 
 <!-- 底部标签 -->
-
 <view class="botomgroup">
-
   <view class="text_kefu">
     <image src="/icon/homesel.png" />
     <view>客服</view>
-    <button class="button_1"open-type="contact"></button>
+    <button class="button_1" open-type="contact"></button>
   </view>
-  
   <view class="text_shear">
     <image src="/icon/home.png" />
     <view>分享</view>
-    <button    open-type="share"></button>
+    <button open-type="share"></button>
   </view>
-
- <navigator  class="text_car" delta="1"
-  open-type="switchTab" url="../car/car">
+  <navigator class="text_car" delta="1" open-type="switchTab" url="../car/car">
     <image src="/icon/car.png" />
     <view>购物车</view>
-
   </navigator>
   <view class="text_add" bind:tap="addCar">加入购物车</view>
   <view class="text_buy">立即购买</view>
+</view>
 
+
+
+<!-- 购物车底部弹框 -->
+<view class="view_diaog" wx:if="{{modalHidden}}">
+  <view class="contant">
+    <view class="iVcontant">
+      <image src="{{data_detail.goods_small_logo}}"  mode="widthFix"></image>
+      <image bind:tap="close_dialog" class="close" src="../../icon/close.png" />
+    </view>
+    <view class="tv_lei">种类:</view>
+    <view class="catery" >
+      <!-- <view class="tv_cate">{{item.attr_name}}</view> -->
+        <view class="tv_cate  {{item.status? 'isActive':''}}"wx:for="{{list}}" wx:key="goods_id" 
+        bind:tap="cateTypeOnClick" data-attr_id="{{item.attr_id}}">{{item.attr_name}}</view>
+    </view>
+
+    <view class="tv_lei">
+      购买数量:
+      <view class="numebr_contant">
+        <view class="del" bind:tap="del">-</view>
+        <view class="number">0</view>
+        <view class="add">+</view>
+      </view>
+    </view>
+  </view>
 </view>
