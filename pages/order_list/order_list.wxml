@@ -1,73 +1,73 @@
 <!--pages/order_list/order_list.wxml-->
 
-<view  class="view_class">
+<view class="view_class">
 
 
-<tabs class="tabs" tabs_title="{{list}}" bindtabsItemChange="tabsItemChange"></tabs>
+  <tabs class="tabs" tabs_title="{{list}}" bindtabsItemChange="tabsItemChange"></tabs>
 
-<view class="contant">
-    
-<scroll-view scroll-y="{{true}}" scroll-top="{{scrollTop}}" >
-    <view class="orderinfo"    wx:for="{{orderInfo}}" wx:key="order_id">
+  <view class="contant">
+
+    <scroll-view refresher-enabled="true" refresher-default-style="white" bindscrolltolower="loadMore" refresher-triggered="{{isRefesh}}" bindrefresherrefresh="onPullDownRefresh" refresher-background="#000" scroll-y="{{true}}" scroll-top="{{scrollTop}}">
+      <view class="orderinfo" wx:for="{{orderInfo}}" wx:key="order_id">
 
 
         <view class="shopDetail">
-            <view class="shopName">
-                {{item.mch.name}}
-            </view>
-         <view class="oder_and_time">
+          <view class="shopName">
+            {{item.mch.name}}
+          </view>
+          <view class="oder_and_time">
             <view class="orderNo">
-                订单号: {{item.order_no}}
+              订单号: {{item.order_no}}
             </view>
             <view class="orderTime">
-               {{item.addtime}}
+              {{item.addtime}}
             </view>
-            </view>
-         
+          </view>
+
         </view>
 
         <view class="goodsInfo" wx:for="{{item.goods_list}}" wx:key="goods_id" wx:for-item="item1">
 
-            <image mode="widthFix" src="{{item1.goods_pic}}" />
-        
-            <view class="goodsDetail" wx:for="{{item1.attr_list}}" wx:key="attr_group_id">
-                    <view class="title">{{item1.goods_name}}</view>
-                     <view class="speace">规格: {{item.attr_name}}</view>
+          <image mode="widthFix" src="{{item1.goods_pic}}" />
 
-                     <view class="number_and_price">
-                          <view class="number">x{{item1.num}}</view>
-                          <view class="price">￥{{item1.price}}</view>
-                     </view>
+          <view class="goodsDetail" wx:for="{{item1.attr_list}}" wx:key="attr_group_id">
+            <view class="title">{{item1.goods_name}}</view>
+            <view class="speace">规格: {{item.attr_name}}</view>
 
+            <view class="number_and_price">
+              <view class="number">x{{item1.num}}</view>
+              <view class="price">￥{{item1.price}}</view>
             </view>
+
+          </view>
         </view>
 
         <view class="allPriceContent">
-            <view class="allprice">合计 ￥{{item.total_price}}</view>
-                    <view class="bn_click">
-                    <view class="cancle" wx:if="{{list[0].isActice}}" bind:tap="cancleView" data-index="{{item.order_id}}">取消
-                        </view>
-               
-                        
-                        <view class="pay_money" bind:tap="payType" data-index="{{item.order_id}}">{{payType}} </view>
-                    </view>
-                
+          <view class="allprice">合计 ￥{{item.total_price}}</view>
+          <view class="bn_click">
+            <view class="cancle" wx:if="{{list[0].isActice}}" bind:tap="cancleView" data-index="{{item.order_id}}">取消
+            </view>
+
+
+            <view class="pay_money" bind:tap="payType" data-index="{{item.order_id}}">{{payType}} </view>
+          </view>
+
         </view>
 
-     
-    </view>
 
-<!-- 订单为空的时候空白view -->
-          <view  class="emptyOrder"  wx:if="{{orderInfo.length==0}}"> 
+      </view>
 
-              <image  src="http://img1.imgtn.bdimg.com/it/u=3731618591,256373894&fm=26&gp=0.jpg" />
-                 
-                <view >
-                         暂无订单 
-                </view>
-            </view>
-   
-</scroll-view>
+      <!-- 订单为空的时候空白view -->
+      <view class="emptyOrder" wx:if="{{orderInfo.length==0}}">
 
-</view>
+        <image src="http://img1.imgtn.bdimg.com/it/u=3731618591,256373894&fm=26&gp=0.jpg" />
+
+        <view>
+          暂无订单
+        </view>
+      </view>
+
+    </scroll-view>
+
+  </view>
 </view>

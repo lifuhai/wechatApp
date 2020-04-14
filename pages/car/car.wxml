@@ -17,7 +17,7 @@ cityName":"广州市","countyName":"海珠区","detailInfo":"新港中路397号"
 <view class="carContant">
     <view class="car_title">购物车</view>
     <block wx:if="{{car_List.length>0}}">
-        <view class="item_title" wx:for="{{car_List}}" wx:key="goos_id">
+        <view class="item_title" wx:for="{{car_List}}" wx:key="goods_id" bind:tap="onItemClick"data-goods="{{item.goods_id}}">
             <!-- 复选框 -->
             <view class="cbox">
                 <checkbox-group bindchange="bindCbox" data-index="{{index}}" data-checks="{{item.isCheck}}">

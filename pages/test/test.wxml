@@ -1,0 +1,57 @@
+<!-- pages/test/test.wxml -->
+
+<view class="title">
+    
+ <!-- <text class="bn">你说你喜欢雨</text> -->
+ <button  class="bn_t" >你说你喜欢雨</button>
+  <!-- <view  class="bn" >你说你喜欢雨</view> -->
+</view>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view class="contant">
+<scroll-view  scroll-y="{{true}}">
+
+    <view class="box1">
+        <view class="box4">box4</view>
+    </view>
+    <view class="box2">box2</view>
+    <view class="box3">box3</view>
+    <view class="textContat">
+        <text>你说你喜欢雨，但是在下雨的时候，你却撑起了伞,</text>
+    </view>
+    <view class="box6">
+        <view>box6</view>
+    </view>
+    <view class="box6">box6</view>
+    <view class="box6">box6</view>
+    <view class="box6">box6</view>
+    <view class="box6">box6</view>
+    <view class="box6">box6</view>
+    <view class="box6">box6</view>
+    </scroll-view>
+</view>

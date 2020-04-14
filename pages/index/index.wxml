@@ -1,42 +1,44 @@
-  <!--index.wxml-->
-
+<!-- index.wxml -->
 <searchInput></searchInput>
-
-
-<swiper  autoplay="true" indicator-dots="true" interval="3000" circular="true">
-    <swiper-item wx:for="{{swipList}}" wx:key="goods_id">
-      <navigator url="../goods_detail/goods_detail?goods_id={{item.goods_id}}">
-
-   
-       <image src="{{item.image_src}}"  mode="widthFix"></image>
-          </navigator>
-    </swiper-item>
+<swiper autoplay="true" indicator-dots="true" interval="3000" circular="true">
+  <swiper-item wx:for="{{swipList}}" wx:key="goods_id">
+    <navigator url="../goods_detail/goods_detail?goods_id={{item.goods_id}}">
+      <image src="{{item.image_src}}" mode="widthFix"></image>
+    </navigator>
+  </swiper-item>
 </swiper>
-
 <!-- 导航 -->
-
 <view class="navitor_style">
-<navigator  wx:for="{{navigator}}" wx:key="name" url="../category/category" open-type="switchTab">
-<image  src="{{item.image_src}}" mode="widthFix"/>
-</navigator>
+  <navigator wx:for="{{navigator}}" wx:key="name" url="../category/category" open-type="switchTab">
+    <image src="{{item.image_src}}" mode="widthFix" />
+  </navigator>
 </view>
 <!-- 楼层 -->
-
 <view class="index_floor">
-<!-- 楼层froup -->
-<view class="index_group" wx:for="{{floorList}}" wx:key="floor_title" >
-
-<!-- 楼层标题 -->
-<view class="index_title"  >
- <image  mode="widthFix" src="{{item.floor_title.image_src}}" />
-
-<!-- 楼层内容 -->
-<view class="index_list">
-<navigator  wx:for="{{item.product_list}}" wx:key="name"wx:for-item="item2" wx:for-index="index2" url="../goods_list/goods_list?c_name={{name[index2*(index+1)]}}">
-<image  mode="{{index2==0?'widthFix':'scaleToFill'}}"  src="{{item2.image_src}}"/>    
-</navigator>
-
+  <!-- 楼层froup -->
+  <view class="index_group" wx:for="{{floorList}}" wx:key="floor_title">
+    <!-- 楼层标题 -->
+    <view class="index_title">
+      <image mode="widthFix" src="{{item.floor_title.image_src}}" />
+      <!-- 楼层内容 -->
+      <view class="index_list">
+        <navigator wx:for="{{item.product_list}}" wx:key="name" wx:for-item="item2" wx:for-index="index2" url="../goods_list/goods_list?c_name={{name[index2*(index+1)]}}">
+          <image mode="{{index2==0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}" />
+        </navigator>
+      </view>
+    </view>
+  </view>
 </view>
+<view class="title">
+  <view class="left">1</view>
+  <view class="middle">2</view>
+  <view class="middle">3</view>
+  <view class="right">
+    <image src="../../icon/close.png" />
+  </view>
 </view>
-</view>
+<view class="contant">
+  <view class="left">1</view>
+  <view class="middle">设置sadsadsdsadsadsadsadsadasdsads啊啊啊啊</view>
+  <view class="right">右面</view>
 </view>

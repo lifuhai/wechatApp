@@ -331,6 +331,19 @@ cityName":"广州市","countyName":"海珠区","detailInfo":"新港中路397号"
      
   },
 
+  onItemClick(e){
+    console.log(e)
+    let goods_id = e.currentTarget.dataset.goods
+ 
+    wx.navigateTo({
+      url: '../goods_detail/goods_detail?goods_id='+goods_id,
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
+  }
 
   
  

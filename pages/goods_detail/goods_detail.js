@@ -47,6 +47,10 @@ Page({
     this.QueryParams.goods_id = options.goods_id;
     this.getDetialData();
     　var that=this
+
+    /**
+     *  获取商品详情位于屏幕的绝对位置
+     */
     wx.createSelectorQuery().select('#twl')
     .boundingClientRect (function(rect){
       that.setData({

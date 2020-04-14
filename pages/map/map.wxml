@@ -1,0 +1,5 @@
+<!-- pages/map/map.wxml -->
+<map id="map"scale="16"
+    bindtap="mapOnClick"
+    enable-zoom="{{false}}"
+ class="mapView" latitude="{{latitude}}"longitude="{{longitude}}"></map>
